@@ -1,32 +1,20 @@
 # bellatrix-auth
-Authentication and authorization service for secure identity management.
 
-**Language:** `Java`
-**Stack:** `Spring Boot, Spring Security, PostgreSQL, Redis, JWT.`
+Authentication and authorization service for Orion Platform V1.
 
-```
-bellatrix-auth/
-├── user
-├── auth
-├── role
-├── permission
-├── session
-├── token
-├── email-verification
-├── password-reset
-└── audit
+## Endpoints
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `POST /auth/refresh`
+- `POST /auth/logout`
+- `GET /auth/me`
+
+## Local
+
+```bash
+mvn test
+mvn spring-boot:run
 ```
 
-**Features:**
-```
-Register
-Login
-Refresh token
-Logout
-JWT access/refresh
-Token blacklist with Redis
-Email verification
-Password reset
-Role-based access
-Organization/team membership support
-```
+The service expects PostgreSQL and Redis. See `../m42-infra/docker-compose.yml`.
